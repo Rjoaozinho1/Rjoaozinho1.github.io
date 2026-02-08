@@ -1,4 +1,3 @@
-
 interface SkillCategory {
   title: string
   skills: string[]
@@ -8,46 +7,49 @@ const Skills = () => {
   const skillCategories: SkillCategory[] = [
     {
       title: "Languages & Frameworks",
-      skills: ["Golang", "Python (FastAPI, Django)", "Node.js (JS, TS)", "React"]
+      skills: ["Golang", "Python", "FastAPI", "Django", "Node.js", "JavaScript", "TypeScript", "React", "Vite", "TailwindCSS", "PyTorch", "TensorFlow"]
     },
     {
       title: "AI & Machine Learning",
-      skills: ["LangChain", "LangSmith", "Agno", "RAG", "Agents", "Embeddings", "Deep Learning"]
+      skills: ["LangChain", "LangSmith", "Agno", "RAG", "Agents", "Embeddings", "Deep Learning", "Machine Learning", "LLMs", "Vector Databases", "Hugging Face"]
     },
     {
       title: "Database & Messaging",
-      skills: ["PostgreSQL", "Cassandra", "Oracle Database", "Redis", "RabbitMQ"]
+      skills: ["PostgreSQL", "Cassandra", "Oracle Database", "Redis", "SQS", "RabbitMQ", "Kafka", "MongoDB", "DynamoDB"]
     },
     {
       title: "DevOps & Cloud",
-      skills: ["Docker", "Kubernetes", "GitHub Actions", "AWS", "OCI (Oracle)"]
+      skills: ["Docker", "Kubernetes", "GitHub Actions", "AWS", "OCI (Oracle)", "CI/CD", "Git"]
     }
   ]
 
   return (
     <section id="skills" className="py-20 scroll-mt-20">
-      <div className="flex items-center gap-4 mb-12">
-        <div className="h-px bg-gray-200 flex-1"></div>
-        <h2 className="text-3xl font-bold text-gray-900">Technical Skills</h2>
-        <div className="h-px bg-gray-200 flex-1"></div>
-      </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-16 tracking-tight">
+        Technical Skills
+      </h2>
+
+      <div className="grid md:grid-cols-2 gap-12">
         {skillCategories.map((category, index) => (
-          <div key={index} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-orange-200 transition-colors">
-            <h3 className="text-lg font-bold text-gray-900 mb-6 pb-2 border-b border-gray-50">
+          <div key={index} className="space-y-6">
+            <h3 className="text-xl font-bold text-gray-900 border-b border-gray-100 pb-4">
               {category.title}
             </h3>
             <div className="flex flex-wrap gap-3">
               {category.skills.map((skill, i) => (
-                <div key={i} className="px-4 py-2 bg-gray-50 text-gray-700 rounded-lg hover:bg-orange-50 hover:text-orange-700 transition-colors cursor-default">
+                <div key={i} className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-orange-100 hover:text-orange-700 transition-colors cursor-default">
                   {skill}
                 </div>
               ))}
             </div>
           </div>
         ))}
+
       </div>
+
+      {/* Decorative Divider */}
+      <div className="mt-20 border-t border-gray-100"></div>
     </section>
   )
 }

@@ -1,10 +1,7 @@
-import { GraduationCap } from 'lucide-react'
-
 interface EducationItem {
   school: string
   degree: string
   period: string
-  status: string
 }
 
 const Education = () => {
@@ -13,42 +10,38 @@ const Education = () => {
       school: "FIAP",
       degree: "Post-graduate in Artificial Intelligence",
       period: "Feb 2025 - Feb 2026",
-      status: "In Progress"
     },
     {
       school: "Anhanguera",
-      degree: "Bachelor using Computer Science",
+      degree: "Bachelor in Computer Science",
       period: "Jan 2021 - Dec 2024",
-      status: "Completed"
     }
   ]
 
   return (
     <section id="education" className="py-20 scroll-mt-20">
-       <div className="flex items-center gap-4 mb-12">
-        <div className="h-px bg-gray-200 flex-1"></div>
-        <h2 className="text-3xl font-bold text-gray-900">Education</h2>
-        <div className="h-px bg-gray-200 flex-1"></div>
-      </div>
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-16 tracking-tight">
+        Education
+      </h2>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="space-y-8">
         {education.map((edu, index) => (
-          <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-orange-100 transition-colors">
-            <div className="p-3 bg-orange-50 text-orange-600 rounded-xl">
-              <GraduationCap size={24} />
+          <div key={index} className="flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-gray-100 hover:border-orange-100 transition-colors group">
+            <div className="space-y-1">
+              <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                {edu.school}
+              </h3>
+              <p className="text-gray-500 text-lg">{edu.degree}</p>
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-900">{edu.school}</h3>
-              <p className="text-gray-600 mb-2">{edu.degree}</p>
-              <div className="flex items-center gap-2 text-sm">
-                <span className="text-gray-400">{edu.period}</span>
-                <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-                <span className="text-orange-600 font-medium">{edu.status}</span>
-              </div>
+            <div className="mt-4 md:mt-0 px-4 py-1 bg-gray-50 text-gray-600 text-sm font-medium rounded-full w-fit">
+              {edu.period}
             </div>
           </div>
         ))}
       </div>
+      
+       {/* Decorative Divider */}
+      <div className="mt-20 border-t border-gray-100"></div>
     </section>
   )
 }
