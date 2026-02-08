@@ -35,36 +35,36 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="py-20 scroll-mt-20">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-16 tracking-tight">
+    <section id="experience" className="py-20 scroll-mt-10">
+      <h2 className="text-3xl md:text-4xl font-bold text-zinc-100 mb-16 tracking-tight">
         Work Experience
       </h2>
 
       <div className="space-y-16">
         {experiences.map((exp, index) => (
           <div key={index} className="group relative grid md:grid-cols-[1fr,2fr] gap-8 md:gap-12 items-start transition-all">
-            
+
             {/* Period & Company (Left Column) */}
             <div className="md:sticky md:top-24">
-              <span className="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium mb-4 group-hover:bg-orange-100 group-hover:text-orange-700 transition-colors">
+              <span className="inline-block px-3 py-1 rounded-full bg-zinc-800 text-zinc-400 text-xs font-medium mb-4 group-hover:bg-purple-900/30 group-hover:text-purple-300 transition-colors">
                 {exp.period}
               </span>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+              <h3 className="text-2xl font-bold text-zinc-100 mb-2 group-hover:text-purple-400 transition-colors">
                 {exp.company}
               </h3>
-              <p className="text-gray-500 font-medium text-lg">{exp.role}</p>
+              <p className="text-zinc-500 font-medium text-lg">{exp.role}</p>
             </div>
 
             {/* Description & Achievements (Right Column) */}
             <div>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6 font-light">
+              <p className="text-lg text-zinc-300 leading-relaxed mb-6 font-light">
                 {exp.description}
               </p>
-              
+
               <ul className="space-y-4">
                 {exp.achievements.map((item, i) => (
-                  <li key={i} className="flex items-start gap-4 text-gray-600">
-                    <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-orange-400 transition-colors flex-shrink-0"></span>
+                  <li key={i} className="flex items-start gap-4 text-zinc-400">
+                    <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-zinc-700 group-hover:bg-purple-500 transition-colors shrink-0"></span>
                     <span className="leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -73,9 +73,9 @@ const Experience = () => {
           </div>
         ))}
       </div>
-      
+
       {/* Decorative Divider */}
-      <div className="mt-20 border-t border-gray-100"></div>
+      <div className="mt-20 border-t border-zinc-800"></div>
     </section>
   )
 }

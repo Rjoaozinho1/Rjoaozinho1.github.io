@@ -30,10 +30,10 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 scroll-mt-20">
       <div className="flex items-baseline justify-between mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-zinc-100 tracking-tight">
           Featured Projects
         </h2>
-        <a href="https://github.com/Rjoaozinho1" target="_blank" className="hidden md:flex items-center gap-2 text-gray-500 hover:text-orange-600 transition-colors">
+        <a href="https://github.com/Rjoaozinho1" target="_blank" className="hidden md:flex items-center gap-2 text-zinc-500 hover:text-purple-500 transition-colors">
           View all on GitHub <ArrowUpRight size={16} />
         </a>
       </div>
@@ -42,30 +42,30 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div 
             key={index} 
-            className="group flex flex-col bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1"
+            className="group flex flex-col bg-zinc-900 rounded-3xl p-8 border border-zinc-800 shadow-sm hover:shadow-xl hover:shadow-zinc-900/50 transition-all duration-300 hover:-translate-y-1"
           >
             <div className="flex items-start justify-between mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300">
+              <div className="w-12 h-12 rounded-2xl bg-purple-900/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
                 <Github size={24} />
               </div>
               {project.link && (
-                <a href={project.link} className="text-gray-400 hover:text-gray-900 transition-colors">
+                <a href={project.link} className="text-zinc-500 hover:text-zinc-200 transition-colors">
                   <ArrowUpRight size={20} />
                 </a>
               )}
             </div>
             
-            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+            <h3 className="text-xl font-bold text-zinc-100 mb-3 group-hover:text-purple-400 transition-colors">
               {project.title}
             </h3>
             
-            <p className="text-gray-600 mb-8 leading-relaxed text-sm flex-grow">
+            <p className="text-zinc-400 mb-8 leading-relaxed text-sm grow">
               {project.description}
             </p>
 
             <div className="flex flex-wrap gap-2 mt-auto">
               {project.tags.map((tag, i) => (
-                <span key={i} className="px-3 py-1 bg-gray-50 text-gray-600 text-xs font-medium rounded-full border border-gray-100">
+                <span key={i} className="px-3 py-1 bg-zinc-800 text-zinc-300 text-xs font-medium rounded-full border border-zinc-700">
                   {tag}
                 </span>
               ))}
@@ -75,13 +75,13 @@ const Projects = () => {
       </div>
       
       <div className="mt-12 text-center md:hidden">
-         <a href="https://github.com/Rjoaozinho1" target="_blank" className="inline-flex items-center gap-2 text-gray-900 font-medium hover:text-orange-600 transition-colors">
+         <a href="https://github.com/Rjoaozinho1" target="_blank" className="inline-flex items-center gap-2 text-zinc-100 font-medium hover:text-purple-500 transition-colors">
           View all on GitHub <ArrowUpRight size={16} />
         </a>
       </div>
       
        {/* Decorative Divider */}
-      <div className="mt-20 border-t border-gray-100"></div>
+      <div className="mt-20 border-t border-zinc-800"></div>
     </section>
   )
 }

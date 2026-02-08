@@ -26,19 +26,19 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 scroll-mt-20">
 
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-16 tracking-tight">
+      <h2 className="text-3xl md:text-4xl font-bold text-zinc-100 mb-16 tracking-tight">
         Technical Skills
       </h2>
 
       <div className="grid md:grid-cols-2 gap-12">
         {skillCategories.map((category, index) => (
           <div key={index} className="space-y-6">
-            <h3 className="text-xl font-bold text-gray-900 border-b border-gray-100 pb-4">
+            <h3 className="text-xl font-bold text-zinc-100 border-b border-zinc-800 pb-4">
               {category.title}
             </h3>
             <div className="flex flex-wrap gap-3">
               {category.skills.map((skill, i) => (
-                <div key={i} className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-orange-100 hover:text-orange-700 transition-colors cursor-default">
+                <div key={i} className="px-4 py-2 bg-zinc-900 text-zinc-300 text-sm font-medium rounded-lg hover:bg-purple-900/20 hover:text-purple-300 transition-colors cursor-default border border-zinc-800/50">
                   {skill}
                 </div>
               ))}
@@ -49,7 +49,7 @@ const Skills = () => {
       </div>
 
       {/* Decorative Divider */}
-      <div className="mt-20 border-t border-gray-100"></div>
+      <div className="mt-20 border-t border-zinc-800"></div>
     </section>
   )
 }
