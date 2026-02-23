@@ -19,7 +19,11 @@ const Skills = () => {
     },
     {
       title: "DevOps & Cloud",
-      skills: ["Docker", "Kubernetes", "GitHub Actions", "AWS", "OCI (Oracle)", "CI/CD", "Git"]
+      skills: ["Docker", "Kubernetes", "GitHub Actions", "AWS", "GCP", "OCI (Oracle)", "CI/CD", "Git", "Terraform", "IaC"]
+    },
+    {
+      title: "Observability",
+      skills: ["Grafana", "CloudWatch", "Prometheus"]
     }
   ]
 

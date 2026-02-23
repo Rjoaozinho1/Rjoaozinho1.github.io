@@ -9,9 +9,22 @@ interface ExperienceItem {
 const Experience = () => {
   const experiences: ExperienceItem[] = [
     {
+      company: "DreamSquad",
+      role: "AI & Software Engineer",
+      period: "Feb 2026 - Present",
+      description: "Architected and implemented high-performance systems using Golang, Python (FastAPI/Django), and Node.js, ensuring maximum stability and performance for mission-critical applications.",
+      achievements: [
+        "Engineered end-to-end applied AI workflows leveraging LangChain/Strands, RAG (Retrieval-Augmented Generation), and AI Agents to solve complex business challenges and streamline client operations.",
+        "Developed and deployed AI models on Hugging Face and AWS SageMaker, optimizing performance and scalability for production environments.",
+        "Creating scalable and high-performance backend services to serve clients' needs.",
+        "Developed automated and resilient cloud infrastructure on AWS and GCP by implementing DevOps and Infrastructure as Code (IaC) using of best practices to ensure continuous deployment, security, and sustainable scalability.",
+        "Applied Site Reliability Engineering (SRE) principles to enhance monitoring and observability, while leading cloud cost optimization (FinOps) initiatives to ensure high operational and financial efficiency."
+      ]
+    },
+    {
       company: "Biofy",
       role: "Software Engineer",
-      period: "Dec 2024 - Present",
+      period: "Dec 2024 - Feb 2026",
       description: "Developing full-stack applications, building responsive front-end components in React and high-performance backend microservices in Golang and Node.js.",
       achievements: [
         "Designed and implemented scalable application architectures (System Design) for full-stack services and databases (SQL and NoSQL).",
