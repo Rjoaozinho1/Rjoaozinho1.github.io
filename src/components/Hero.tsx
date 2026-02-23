@@ -19,7 +19,21 @@ const Hero = () => {
         Available for new opportunities
       </motion.div>
 
-      <div className="grid md:grid-cols-[1.5fr,1fr] gap-12 items-start w-full">
+      <div className="grid gap-12 items-center w-full">
+
+        {/* Profile Photo - Right Column */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex justify-start"
+        >
+          <img
+            src="/perfil.jpeg"
+            alt="João Pedro"
+            className="w-64 h-64 rounded-2xl object-cover border-2 border-zinc-800 shadow-lg shadow-zinc-900/50"
+          />
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
