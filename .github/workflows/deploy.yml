@@ -1,0 +1,88 @@
+name: Build & Deploy (Dokploy)
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: rjoaozinho1/portfolio-prod
+
+jobs:
+  build-and-push:
+    name: Build & Push Docker image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest
+            type=sha,prefix=sha-
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    name: Trigger Dokploy redeploy
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: POST /api/compose.deploy
+        env:
+          DOKPLOY_URL: ${{ secrets.DOKPLOY_URL }}
+          DOKPLOY_TOKEN: ${{ secrets.DOKPLOY_TOKEN }}
+          DOKPLOY_COMPOSE_ID: ${{ secrets.DOKPLOY_COMPOSE_ID }}
+          IMAGE_SHA: ${{ github.sha }}
+          GH_ACTOR: ${{ github.actor }}
+          GH_REF: ${{ github.ref_name }}
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          set -euo pipefail
+          short_sha="${IMAGE_SHA:0:7}"
+          payload=$(jq -nc \
+            --arg composeId   "$DOKPLOY_COMPOSE_ID" \
+            --arg title       "GH Actions: $short_sha" \
+            --arg description "Triggered by $GH_ACTOR on $GH_REF — commit $IMAGE_SHA"$'\n\n'"$COMMIT_MSG" \
+            '{composeId: $composeId, title: $title, description: $description}')
+
+          response=$(curl -sS -w "\n%{http_code}" -X POST \
+            "$DOKPLOY_URL/api/compose.deploy" \
+            -H "x-api-key: $DOKPLOY_TOKEN" \
+            -H "accept: application/json" \
+            -H "Content-Type: application/json" \
+            -d "$payload")
+          body=$(echo "$response" | sed '$d')
+          status=$(echo "$response" | tail -n 1)
+          echo "Dokploy response ($status): $body"
+          if [[ ! "$status" =~ ^2 ]]; then
+            echo "Deploy trigger failed (HTTP $status)"
+            exit 1
+          fi
