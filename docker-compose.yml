@@ -6,8 +6,8 @@ services:
       - "8080:80"
     restart: unless-stopped
 
-  # portfolio-prod:
-  #   container_name: portfolio-prod
-  #   image: ghcr.io/rjoaozinho1/portfolio-prod:latest
-  #   restart: unless-stopped
-  #   pull_policy: always
+  portfolio-prod:
+    container_name: portfolio-prod
+    image: ghcr.io/rjoaozinho1/portfolio-prod:latest
+    restart: unless-stopped
+    pull_policy: always
