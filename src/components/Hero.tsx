@@ -47,12 +47,13 @@ const Hero = () => {
           </h1>
 
           <p className="text-sm justify-center text-zinc-400 leading-relaxed max-w-2xl font-light">
-            AI and Software Engineer with over 3 years of experience in Back-End development and applied Artificial Intelligence. Skilled in
-            technologies such as Python, Langchain, Golang, Node.js, Docker, RabbitMQ, Stripe, Postgres, Redis, and Oracle Database. I
-            have hands-on experience with cloud solutions (OCI and AWS), including console management and tooling.
-            I led the development of the Back-End and AI architecture for a project in the legal sector, implementing integration with LLMs,
-            Agents, RAG, and data ingestion/vectorization pipelines. I delivered a robust Back-End featuring secure and efficient APIs for
-            connecting with mobile and web platforms. I hold a B.S. in Computer Science and am currently pursuing a graduate degree in
+            AI and Software Engineer with over 4 years of experience in Back-End development and applied Artificial Intelligence. Skilled in
+            technologies such as Golang Python, Node.js, Docker, RabbitMQ, Stripe, Postgres, MongoDB, Redis, AWS, Oracle. I
+            have hands-on experience with cloud solutions (OCI and AWS).
+            Have been involved in the development of Back-Ends and AI systems with robust architectures, with experiences with: ETL, Ingestions processing, microservices, Agents, data intensive applications/vectorization pipelines.
+            Delivering robust Back-End featuring secure and efficient APIs for
+            connecting with mobile and web platforms.
+            Hold a B.S. in Computer Science and am currently pursuing a port graduate degree in
             Artificial Intelligence for Software Engineering.
           </p>
 
