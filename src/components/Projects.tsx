@@ -11,28 +11,38 @@ interface ProjectItem {
 const Projects = () => {
   const projects: ProjectItem[] = [
     {
-      title: "AI & Legal Tech Platform",
-      description: "Led the development of Back-End and AI architecture for a legal sector project. Architected and implemented a high-performance system, ensuring maximum stability and performance. Implemented integration with LLMs, Agents, RAG, and data ingestion/vectorization pipelines.",
-      tags: ["Microservices", "Python", "LangChain", "RAG", "Docker", "AWS", "PostgreSQL", "Golang", "FastAPI", "SQS", "S3", "EC2", "Lambda"],
+      title: "Yapoli",
+      description: "Architected and built a multi-tenant, fully serverless platform on AWS powering two AI workloads: computer vision to detect and classify sponsor logos on football jerseys (Amazon Rekognition Custom Labels with bounding-box detection), and automated document analysis to extract information and generate metadata from large media libraries. Owned the end-to-end design — architecture, Lambda development, API, and orchestration via Step Functions and EventBridge, with CloudWatch monitoring. Optimized cost through cold-start mitigation and event-driven patterns.",
+      tags: ["Serverless", "Multi-tenant", "AWS", "Lambda", "Step Functions", "EventBridge", "Rekognition Custom Labels", "Computer Vision", "CloudWatch", "Event-Driven", "Cost Optimization", "Python"],
     },
     {
-      title: "Enterprise Chatbots & CRM Integrations",
-      description: "Built custom chatbots and full-stack services with real-time capabilities via WebSockets. Integrated with Pipedrive, RD Station, and SAPs.",
-      tags: ["Microservices", "React", "Golang", "Node.js", "WebSockets", "Nginx", "PostgreSQL", "Docker", "Redis", "APIs"],
+      title: "E-law",
+      description: "Built an end-to-end ETL pipeline on AWS (Python, Glue, Lambda) ingesting high-volume legal JSON into a normalized SQL warehouse, then exposed it to natural-language querying through an AI layer — turning raw documents into data non-technical teams could actually ask questions of.",
+      tags: ["ETL", "AWS Glue", "Python", "LangChain", "RAG", "Docker", "AWS", "PostgreSQL", "FastAPI", "SQS", "S3", "EC2", "Lambda"],
     },
     {
-      title: "Financial System Architecture",
-      description: "Designed scalable architectures for full-stack services, including secure payment integrations with Stripe and async messaging with RabbitMQ.",
-      tags: ["System Design", "Stripe", "RabbitMQ", "Docker"],
+      title: "Biofy Genomics",
+      description: "Owned the complete backend of a genomics platform in Go: event-driven microservices communicating over RabbitMQ, Stripe subscriptions and billing, and clear service boundaries designed for fault isolation and independent scaling.",
+      tags: ["System Design", "Microservices", "Event-Driven", "Golang", "Stripe", "Billing", "RabbitMQ", "PostgreSQL", "Docker", "AWS"],
+    },
+    {
+      title: "Kairo",
+      description: "Complete Back-End platform for WhatsApp + AI integration, using RabbitMQ for asynchronous messaging and AWS for infrastructure.",
+      tags: ["Golang", "Python", "AI", "RabbitMQ", "AWS", "PostgreSQL", "Docker", "APIs"],
+    },
+    {
+      title: "Equipment Management",
+      description: "Delivered a multi-tenant SaaS for construction companies to track and manage equipment fleets. TypeScript monorepo (React + Node), PostgreSQL with Prisma, and type-safe contracts shared end-to-end between front and back end.",
+      tags: ["SaaS", "Multi-tenant", "TypeScript", "Monorepo", "React", "Node.js", "PostgreSQL", "Prisma"],
     },
     {
       title: "Udimoveis",
-      description: "A real state plataform e-commerce for a client that sells properties.",
-      tags: ["Microservices", "React", "Golang", "Node.js", "Nginx", "PostgreSQL", "Docker", "Redis", "APIs", "Supabase", "AWS", "EC2", "RDS"],
+      description: "Designed and shipped the full platform for a regional real-estate agency: Go backend and React front end in a TypeScript monorepo, deployed on AWS — running in production and serving the company's listings and leads today.",
+      tags: ["Microservices", "React", "Golang", "TypeScript", "Monorepo", "Nginx", "PostgreSQL", "Docker", "Redis", "APIs", "Supabase", "AWS", "EC2", "RDS"],
     },
     {
       title: "Agent for an Auction company",
-      description: "Developed and colaborated in the creation of an AI agent for an auction company. The agent is able to analyze the auction's catalog and generate a description for each lot and give the best link to the user for its interest.",
+      description: "Developed and collaborated in the creation of an AI agent for an auction company. The agent analyzes the auction's catalog, generates a description for each lot, and returns the best matching link for the user's interest.",
       tags: ["Python", "Strands", "GenAI", "LangChain", "RAG", "Microservices", "Docker", "AWS", "PostgreSQL", "FastAPI", "SQS", "S3", "EC2", "Lambda"],
     }
   ]
