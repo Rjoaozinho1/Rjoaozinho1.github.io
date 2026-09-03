@@ -7,11 +7,11 @@ const Skills = () => {
   const skillCategories: SkillCategory[] = [
     {
       title: "Languages & Frameworks",
-      skills: ["Golang", "Python", "FastAPI", "Django", "Node.js", "JavaScript", "TypeScript", "React", "Vite", "TailwindCSS", "PyTorch", "TensorFlow"]
+      skills: ["Golang", "Python", "TypeScript", "FastAPI", "Django", "Node.js", "APIs", "Lambdas", "TypeScript", "JavaScript", "React", "Vite", "TailwindCSS", "PyTorch", "TensorFlow"]
     },
     {
       title: "AI & Machine Learning",
-      skills: ["LangChain", "LangSmith", "Agno", "RAG", "Agents", "Embeddings", "Deep Learning", "Machine Learning", "LLMs", "Vector Databases", "Hugging Face"]
+      skills: ["LangChain", "LangSmith", "Agno", "Strands", "RAG", "Agents", "Embeddings", "Deep Learning", "Machine Learning", "LLMs", "Vector Databases", "Bedrock", "Rekognition", "Hugging Face"]
     },
     {
       title: "Database & Messaging",
@@ -23,7 +23,7 @@ const Skills = () => {
     },
     {
       title: "Observability",
-      skills: ["Grafana", "CloudWatch", "Prometheus"]
+      skills: ["Grafana", "CloudWatch", "Langfuse", "Prometheus"]
     }
   ]
 
