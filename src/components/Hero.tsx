@@ -47,19 +47,18 @@ const Hero = () => {
           </h1>
 
           <p className="text-sm justify-center text-zinc-400 leading-relaxed max-w-2xl font-light">
-            AI and Software Engineer with over 4 years of experience in Back-End development and applied Artificial Intelligence. Skilled in
-            technologies such as Golang Python, Node.js, Docker, RabbitMQ, Stripe, Postgres, MongoDB, Redis, AWS, Oracle. I
-            have hands-on experience with cloud solutions (OCI and AWS).
-            Have been involved in the development of Back-Ends and AI systems with robust architectures, with experiences with: ETL, Ingestions processing, microservices, Agents, data intensive applications/vectorization pipelines.
-            Delivering robust Back-End featuring secure and efficient APIs for
-            connecting with mobile and web platforms.
-            Hold a B.S. in Computer Science and am currently pursuing a port graduate degree in
-            Artificial Intelligence for Software Engineering.
+            Software Engineer with 4+ years of experience, specially in back-end development, distributed systems, cloud tooling,
+            and applied AI across Go, Node.js, Python, AWS and OCI.
+            Led back-end systems and architecture for legal-sector projects, payments systems, multi communications, and
+            multi processing load/jobs data pipelines — including strong backend core concepts, authorization, managing metrics,
+            observability, integration with diverse systems, AI, RAG, and data ingestion/vectorization pipelines.
+            Hold a B.S. in Computer Science (Anhanguera, 2024) and a post-graduate degree in
+            Artificial Intelligence (FIAP, 2026).
           </p>
 
           <div className="flex items-center gap-2 text-zinc-500 text-sm">
             <MapPin size={16} />
-            <span>Minas Gerais, Brazil</span>
+            <span>Uberlândia, MG, Brazil</span>
           </div>
         </motion.div>
       </div>
